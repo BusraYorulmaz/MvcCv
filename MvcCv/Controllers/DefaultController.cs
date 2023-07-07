@@ -7,6 +7,7 @@ using MvcCv.Models.Entity;
 
 namespace MvcCv.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         // GET: Default
@@ -15,6 +16,11 @@ namespace MvcCv.Controllers
         {
             var degerler = db.TblHakkimda.ToList();
             return View(degerler);
+        }
+        public PartialViewResult SosyalMedya()
+        {
+            var sosyalmedya = db.TblSosyalMedya.Where(x=>x.Durum==true).ToList();
+            return PartialView(sosyalmedya);
         }
         public PartialViewResult Deneyim()
         {
@@ -33,7 +39,7 @@ namespace MvcCv.Controllers
         }
         public PartialViewResult Hobilerim()
         {
-            var hobiler = db.TblHobilerim.ToList();
+            var hobiler = db.TblHobilerim1.ToList();
             return PartialView(hobiler);
         }
         public PartialViewResult Sertifikalar()

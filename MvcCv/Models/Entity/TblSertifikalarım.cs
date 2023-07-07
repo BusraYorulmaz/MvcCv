@@ -11,11 +11,14 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblSertifikalarım
     {
         public int ID { get; set; }
+        [Required(ErrorMessage = "Bu alan boş geçilemez")]
         public string Aciklama { get; set; }
+        [Required(ErrorMessage = "Bu alan boş geçilemez")]
         public string Tarih { get; set; }
     }
 }

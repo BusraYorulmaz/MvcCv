@@ -13,12 +13,15 @@
     <br />
     @Html.Label("Başlık")
     @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Baslik, "", new { @style = "color:red" })
     <br />
     @Html.Label("Alt Başlık")
     @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AltBaslik, "", new { @style = "color:red" })
     <br />
     @Html.Label("Tarih")
     @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Tarih, "", new { @style = "color:red" })
     <br />
     @Html.Label("Açıklama")
     @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })

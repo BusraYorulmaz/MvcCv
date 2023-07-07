@@ -27,6 +27,10 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult SertifikaGetir(TblSertifikalarım t)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("SertifikaGetir");
+            }
             var sertifika = repo.Find(x => x.ID == t.ID);
             sertifika.Aciklama = t.Aciklama;
             sertifika.Tarih = t.Tarih;
@@ -41,6 +45,10 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult YeniSertifika(TblSertifikalarım p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YeniSertifika");
+            }
             repo.TAdd(p);
             return RedirectToAction("Index");
         }

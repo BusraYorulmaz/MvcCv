@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MvcCv.Repositories
 {
-    public class HobiRepository : GenericRepository<TblHobilerim>
+    public class HobiRepository : GenericRepository<TblHobilerim1>
     {
     }
 }

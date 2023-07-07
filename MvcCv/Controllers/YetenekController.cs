@@ -24,6 +24,10 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult YeniYetenek(TblYetenekerim p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YeniYetenek");
+            }
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
@@ -36,12 +40,17 @@ namespace MvcCv.Controllers
         [HttpGet]
         public ActionResult YetenekDüzenle(int id)
         {
+           
             var yetenek = repo.Find(x => x.ID == id);
             return View(yetenek);
         }
         [HttpPost]
         public ActionResult YetenekDüzenle(TblYetenekerim t)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YetenekDüzenle");
+            }
             var y = repo.Find(x => x.ID == t.ID);
             y.Yetenek = t.Yetenek;
             y.Oran = t.Oran;

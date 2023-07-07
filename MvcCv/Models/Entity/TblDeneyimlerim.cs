@@ -11,13 +11,18 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblDeneyimlerim
     {
         public int ID { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ geçilemez")]
         public string Baslik { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ geçilemez")]
         public string AltBaslik { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ geçilemez")]
         public string Aciklama { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ geçilemez")]
         public string Tarih { get; set; }
     }
 }

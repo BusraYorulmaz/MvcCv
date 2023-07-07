@@ -25,6 +25,10 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult DeneyimEkle(TblDeneyimlerim p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("DeneyimEkle");
+            }
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
@@ -37,12 +41,16 @@ namespace MvcCv.Controllers
         [HttpGet]
         public ActionResult DeneyimGetir(int id)
         {
-            TblDeneyimlerim t = repo.Find(x=>x.ID == id);
+            TblDeneyimlerim t = repo.Find(x => x.ID == id);
             return View(t);
         }
         [HttpPost]
         public ActionResult DeneyimGetir(TblDeneyimlerim p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("DeneyimGetir");
+            }
             TblDeneyimlerim t = repo.Find(x => x.ID == p.ID);
             t.Baslik = p.Baslik;
             t.AltBaslik = p.AltBaslik;

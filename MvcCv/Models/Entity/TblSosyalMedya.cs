@@ -11,11 +11,17 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class TblHobilerim
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class TblSosyalMedya
     {
         public int ID { get; set; }
-        public string Aciklama1 { get; set; }
-        public string Aciklama2 { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ geçilemez")]
+        public string Ad { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ geçilemez")]
+        public string Link { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ geçilemez")]
+        public string ikon { get; set; }
+        public Nullable<bool> Durum { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcCv.Models.Entity.TblDeneyimlerim
 @{
     ViewBag.Title = "DeneyimEkle";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -8,13 +8,21 @@
 <br />
 <form method="post">
 
-    <input type="text" name="Baslik" class="form-control" placeholder="Başlığı Yazınız" />
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Baslik, "", new { @style = "color:red" })
     <br />
-    <input type="text" name="AltBaslik" class="form-control" placeholder="Alt Başlık" />
+    @Html.Label("Alt Baslik")
+    @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.AltBaslik, "", new { @style = "color:red" })
     <br />
-    <input type="text" name="Tarih" class="form-control" placeholder="Çalışma Tarihi" />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Tarih, "", new { @style = "color:red" })
     <br />
-    <textarea   name="Aciklama" class="form-control" placeholder="Açıklamanızı Giriniz" rows="5"></textarea>
+    @Html.Label("Aciklama")
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Aciklama, "", new { @style = "color:red" })
     <br />
     <button class="btn btn-info">Kaydet</button>
 </form>
