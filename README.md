@@ -8,7 +8,8 @@ Validation processes and Crud processes are also included in the project
 - MSSQL
 - CODE FIRST
 - REPOSITORY DESIGN PATTERN
-
+- 
+Some pages of the project are below
 ## :camera_flash: Screenshot :
 
 | Hakkımda | Deneyimlerim |  
