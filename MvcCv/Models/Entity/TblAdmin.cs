@@ -11,11 +11,14 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblAdmin
     {
         public int ID { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ geçilemez")]
         public string KullaniciAdi { get; set; }
+        [Required(ErrorMessage = "Bu alan boþ geçilemez")]
         public string Sifre { get; set; }
     }
 }
